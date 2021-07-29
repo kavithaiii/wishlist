@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Stuff we override to fit our dev flow
+yarn.lock
+package-lock.json
