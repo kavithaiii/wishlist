@@ -12,18 +12,19 @@ exports.wishlistAll = async (req, res) => {
 	  try {
 	    const res = await axios.get(`${process.env.API_URL}/storeadmin/me`,
 	    	{
-	    		headers: {
-			    'Authorization': `Basic ${process.env.Pid}:${process.env.API_KEY}`
+	    		auth: {
+			    username: `${process.env.Pid}`,
+			    password: `${process.env.API_KEY}`
 			  }
 	    	})
-	    // res.json(data)
-	    console.log('>>> response from SWYM relay')
-	    console.log(res.json(data))
-	  }
-	  catch (err) {
-	    console.log(err)
-	  }
+		    // res.json(data)
+		    console.log('>>> Authenticated')
+		    console.log(res.status)
+	  	}	
+	  	catch (err) {
+	    	console.log('Error on authentication',err)
+	    }
 	  
 	// Send a success message in response
-      res.status(200).json({ message: `Wishlist ... loading from server!` })
+	res.status(200).json({ message: `Wishlist ... loading from server!` })
 }
