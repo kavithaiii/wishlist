@@ -38,6 +38,7 @@ export const Wishlist = () => {
       <Form onSubmit={handleSubmit}>
           <FormLayout>
               <TextField
+              	type= "email"
                 value={email}
                 label="User Email Address"
                 placeholder="Enter an email address to search"
